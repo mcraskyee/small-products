@@ -61,6 +61,10 @@ legend {
   color: var(--content-purple);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
 textarea {
   display: inline-block;
   border: 1px solid var(--content-purple);
@@ -68,7 +72,7 @@ textarea {
   margin-top: var(--font-margin);
   width: var(--input-width);
   height: calc(var(--content-margin)*2);
-  resize: none
+  resize: none;
 }
 
 .btn {
