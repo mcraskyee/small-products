@@ -15,7 +15,8 @@
   <body>
     <form>
       <h1>Registration Form</h1>
-      <section>
+      <fieldset>
+        <legend>*Basic Info</legend>
         <div class="group">
           <label class="group-name" for="first-name">First Name:</label>
           <input
@@ -36,8 +37,28 @@
             required
           />
         </div>
-      </section>
-      <section>
+        <div class="group">
+          <label class="group-name" for="dob">Date of Birth:</label>
+          <input class="group-content" type="date" id="dob" />
+        </div>
+        <div class="group">
+          <label class="group-name" for="gender">Gender:</label>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">Male</label>
+          </div>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </div>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>*Contact Info</legend>
         <div class="group">
           <label class="group-name" for="email">Email:</label>
           <input
@@ -72,32 +93,16 @@
             required
           />
         </div>
-      </section>
-      <section>
+      </fieldset>
+      <fieldset>
+        <legend>More About You</legend>
         <div class="group">
-          <label class="group-name" for="dob">Date of Birth:</label>
-          <input class="group-content" type="date" id="dob" />
-        </div>
-        <div class="group">
-          <label class="group-name" for="gender">Gender:</label>
-          <div class="group-radio">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Male</label>
-          </div>
-          <div class="group-radio">
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Female</label>
-          </div>
-          <div class="group-radio">
-            <input type="radio" name="gender" id="other" value="other" />
-            <label for="other">Other</label>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="group">
-          <label class="group-name" for="about-me">About me:</label>
-          <textarea placeholder=" About Me" id="about-me"></textarea>
+          <label class="group-name" for="about-me">About me</label>
+          <textarea
+            placeholder=" Less than 140 words"
+            id="about-me"
+            maxlength="140"
+          ></textarea>
         </div>
         <div class="group">
           <label class="group-name" for="profession"
@@ -110,10 +115,11 @@
             <option value="ui-ux-design">UI/UX Design</option>
           </select>
         </div>
-      </section>
-      <section>
+      </fieldset>
+
+      <div class="btn">
         <button class="group-content">Submit</button>
-      </section>
+      </div>
     </form>
   </body>
 </html>

@@ -30,9 +30,17 @@ h1 {
   color: var(--content-purple);
 }
 
-section {
+fieldset {
+  border-color: var(--content-text);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   margin-top: var(--section-margin);
-  position: relative;
+}
+
+legend {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .group {
@@ -60,10 +68,16 @@ textarea {
   margin-top: var(--font-margin);
   width: var(--input-width);
   height: calc(var(--content-margin)*2);
+  resize: none
+}
+
+.btn {
+  margin-top: var(--section-margin);
 }
 
 button {
   cursor: pointer;
+  margin-top: var(--section-margin);
 }
 
 button:hover {
