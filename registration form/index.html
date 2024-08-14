@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <form>
+      <h1>Registration Form</h1>
+      <section>
+        <div class="group">
+          <label class="group-name" for="first-name">First Name:</label>
+          <input
+            class="group-content"
+            type="text"
+            id="first-name"
+            placeholder=" First Name"
+            required
+          />
+        </div>
+        <div class="group">
+          <label class="group-name" for="last-name">Last Name</label>
+          <input
+            class="group-content"
+            type="text"
+            id="last-name"
+            placeholder=" Last Name"
+            required
+          />
+        </div>
+      </section>
+      <section>
+        <div class="group">
+          <label class="group-name" for="email">Email:</label>
+          <input
+            class="group-content"
+            type="email"
+            id="email"
+            placeholder=" Email"
+            required
+          />
+        </div>
+        <div class="group">
+          <label class="group-name" for="password">Password:</label>
+          <input
+            class="group-content"
+            type="password"
+            id="password"
+            minlength="4"
+            placeholder=" Password should not be less than 4"
+            required
+          />
+        </div>
+        <div class="group">
+          <label class="group-name" for="confirm-password"
+            >Confirm Password:</label
+          >
+          <input
+            class="group-content"
+            type="password"
+            id="confirm-password"
+            minlength="4"
+            placeholder=" Password should not be less than 4"
+            required
+          />
+        </div>
+      </section>
+      <section>
+        <div class="group">
+          <label class="group-name" for="dob">Date of Birth:</label>
+          <input class="group-content" type="date" id="dob" />
+        </div>
+        <div class="group">
+          <label class="group-name" for="gender">Gender:</label>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">Male</label>
+          </div>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </div>
+          <div class="group-radio">
+            <input type="radio" name="gender" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="group">
+          <label class="group-name" for="about-me">About me:</label>
+          <textarea placeholder=" About Me" id="about-me"></textarea>
+        </div>
+        <div class="group">
+          <label class="group-name" for="profession"
+            >Choose your Profession:</label
+          >
+          <select class="group-content" id="profession">
+            <option value="">--Professions--</option>
+            <option value="web-development">Web Development</option>
+            <option value="data-analytics">Data Analytics</option>
+            <option value="ui-ux-design">UI/UX Design</option>
+          </select>
+        </div>
+      </section>
+      <section>
+        <button class="group-content">Submit</button>
+      </section>
+    </form>
+  </body>
+</html>
