@@ -17,6 +17,7 @@ const CourseCard = (props) => {
       alert("Please add your comment.");
       return;
     }
+    alert(`Your comment: "${comment}" about ${props.title} is submitted.`);
     setIsSubmitted(!isSubmitted);
     setComment("");
   };
@@ -54,7 +55,7 @@ const CourseCard = (props) => {
       <div className="card-main">
         <h2 className="card-main-title">{props.title}</h2>
         <button className="card-main-button" onClick={handleApply}>
-          {props.difficulty === "Elementary" ? "Study Now!" : "Apply Now"}
+          {props.isCompleted === true ? "Review Now!" : "Study Now!"}
         </button>
         <button className="card-main-button" onClick={handleVisible}>
           Comment
@@ -63,7 +64,7 @@ const CourseCard = (props) => {
           <h3 className="card-main-bottom-price">$450.00</h3>
           <div className="card-main-bottom-context">
             <p className="card-main-bottom-context-language">EN</p>
-            <p className="card-main-bottom-context-time">8h 00m</p>
+            <p className="card-main-bottom-context-time">{`${props.duration} Totally`}</p>
           </div>
         </div>
       </div>
