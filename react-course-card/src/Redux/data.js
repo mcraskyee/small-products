@@ -21,7 +21,7 @@ let coursesData = [
   },
   {
     id: 3,
-    title: "ES001 HTML Index",
+    title: "ES003 JavaScript",
     difficulty: "Advanced",
     price: 650,
     duration: "8h",

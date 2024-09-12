@@ -5,9 +5,12 @@ const CourseCard = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [comment, setComment] = useState("");
-  const [apply, setApply] = useState(0);
+  const [applyCount, setApplyCount] = useState(0);
 
-  const handleVisible = () => {
+  const isCompletedBtnText =
+    props.isCompleted === true ? "Review Now!" : "Study Now!";
+
+  const handleChangeVisible = () => {
     setIsVisible(!isVisible);
     setIsSubmitted(false);
   };
@@ -22,12 +25,12 @@ const CourseCard = (props) => {
     setComment("");
   };
 
-  const handleComment = (event) => {
+  const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
 
-  const handleApply = () => {
-    setApply(apply + 1);
+  const handleApplyCount = () => {
+    setApplyCount(applyCount + 1);
   };
 
   const changeFooterColor = () => {
@@ -49,15 +52,15 @@ const CourseCard = (props) => {
         </span>
         <div className="card-top-content">
           <h5 className="card-top-content-online">ONLINE</h5>
-          <h6 className="card-top-content-applies">{`${apply} Applied`}</h6>
+          <h6 className="card-top-content-applies">{`${applyCount} Applied`}</h6>
         </div>
       </div>
       <div className="card-main">
         <h2 className="card-main-title">{props.title}</h2>
-        <button className="card-main-button" onClick={handleApply}>
-          {props.isCompleted === true ? "Review Now!" : "Study Now!"}
+        <button className="card-main-button" onClick={handleApplyCount}>
+          {isCompletedBtnText}
         </button>
-        <button className="card-main-button" onClick={handleVisible}>
+        <button className="card-main-button" onClick={handleChangeVisible}>
           Comment
         </button>
         <div className="card-main-bottom">
@@ -80,7 +83,7 @@ const CourseCard = (props) => {
             className="card-comment-content"
             placeholder="No more than 100 words"
             value={comment}
-            onChange={handleComment}
+            onChange={handleCommentChange}
           ></textarea>
           <button
             className="card-comment-submit"
