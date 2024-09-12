@@ -61,7 +61,7 @@ const CourseCard = (props) => {
           Comment
         </button>
         <div className="card-main-bottom">
-          <h3 className="card-main-bottom-price">$450.00</h3>
+          <h3 className="card-main-bottom-price">{`$${props.price}`}</h3>
           <div className="card-main-bottom-context">
             <p className="card-main-bottom-context-language">EN</p>
             <p className="card-main-bottom-context-time">{`${props.duration} Totally`}</p>
