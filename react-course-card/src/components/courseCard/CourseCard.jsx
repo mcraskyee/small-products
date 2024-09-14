@@ -4,11 +4,16 @@ import "./CourseCard.css";
 const CourseCard = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [comment, setComment] = useState("");
-  const [applyCount, setApplyCount] = useState(0);
+  const [review, setReview] = useState("");
+  const [isReviewed, setIsReviewed] = useState(false);
+  const [enrollCount, setEnrollCount] = useState(0);
 
+  //从父亲级传过来的加props
   const isCompletedBtnText =
-    props.isCompleted === true ? "Review Now!" : "Study Now!";
+    props.isCompleted === true ? "Revisit Course!" : "Start Now!";
+  //在组件内部定义的state不加props
+  const isReviewedBtnText =
+    isReviewed === true ? "Review Is Submitted" : "Submit Review";
 
   const handleChangeVisible = () => {
     setIsVisible(!isVisible);
@@ -16,21 +21,22 @@ const CourseCard = (props) => {
   };
 
   const handleSubmit = () => {
-    if (comment.trim() === "") {
-      alert("Please add your comment.");
+    if (review.trim() === "") {
+      alert("Please add your review.");
       return;
     }
-    alert(`Your comment: "${comment}" about ${props.title} is submitted.`);
-    setIsSubmitted(!isSubmitted);
-    setComment("");
+    alert(`Your review: "${review}" about ${props.title} is submitted.`);
+    setIsSubmitted(true);
+    setIsReviewed(true);
+    setReview("");
   };
 
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
+  const handleReviewChange = (event) => {
+    setReview(event.target.value);
   };
 
-  const handleApplyCount = () => {
-    setApplyCount(applyCount + 1);
+  const handleEnrollCount = () => {
+    setEnrollCount(enrollCount + 1);
   };
 
   const changeFooterColor = () => {
@@ -52,16 +58,16 @@ const CourseCard = (props) => {
         </span>
         <div className="card-top-content">
           <h5 className="card-top-content-online">ONLINE</h5>
-          <h6 className="card-top-content-applies">{`${applyCount} Applied`}</h6>
+          <h6 className="card-top-content-applies">{`${enrollCount} Enrolled`}</h6>
         </div>
       </div>
       <div className="card-main">
         <h2 className="card-main-title">{props.title}</h2>
-        <button className="card-main-button" onClick={handleApplyCount}>
+        <button className="card-main-button" onClick={handleEnrollCount}>
           {isCompletedBtnText}
         </button>
         <button className="card-main-button" onClick={handleChangeVisible}>
-          Comment
+          Write Review
         </button>
         <div className="card-main-bottom">
           <h3 className="card-main-bottom-price">{`$${props.price}`}</h3>
@@ -82,15 +88,16 @@ const CourseCard = (props) => {
           <textarea
             className="card-comment-content"
             placeholder="No more than 100 words"
-            value={comment}
-            onChange={handleCommentChange}
+            value={review}
+            onChange={handleReviewChange}
           ></textarea>
           <button
             className="card-comment-submit"
             onClick={handleSubmit}
-            disabled={isSubmitted}
+            // 绑定多个用or连接
+            disabled={isSubmitted || isReviewed}
           >
-            Submit
+            {isReviewedBtnText}
           </button>
         </div>
       )}
