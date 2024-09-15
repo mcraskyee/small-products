@@ -53,7 +53,7 @@ const CourseCard = (props) => {
   return (
     <div className="card">
       <div className="card-top" style={{ backgroundColor: props.cardTopColor }}>
-        <span class="card-top-icon material-symbols-outlined">
+        <span className="card-top-icon material-symbols-outlined">
           {props.icon}
         </span>
         <div className="card-top-content">
