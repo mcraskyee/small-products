@@ -1,55 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import coursesData from "./Redux/coursesData";
+import coursesData from "./Data/coursesData";
 import CourseCard from "./components/courseCard/CourseCard";
 import LecturerCard from "./components/lecturerCard/LecturerCard";
 
 function App() {
+  const [courses, setCourses] = useState(coursesData);
+  const [filteredCourses, setFilteredCourses] = useState(coursesData);
   const [lecturers, setLecturers] = useState([]);
+  const [filteredLectures, setFilteredLectures] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const url =
+    "https://my-json-server.typicode.com/JustinHu8/courseCardMock/lecturers";
 
   useEffect(() => {
-    //promise to get data from web
-    // const fetchLecturers = () => {
-    //   fetch("https://my-json-server.typicode.com/JustinHu8/courseCardMock/lecturers")
-    //     .then((response) => {
-    //       if (!response.ok) {
-    //         throw new Error("Failed to fetch lecturers.");
-    //       }
-    //       return response.json();
-    //     })
-    //     .then((data) => {
-    //       setLecturers(data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching data", error);
-    //     });
-    // };
-
-    //async-await to get data from web
-    // const fetchLecturers = async () => {
-    //   try {
-    //     const response = await fetch(
-    //       "https://my-json-server.typicode.com/JustinHu8/courseCardMock/lecturers"
-    //     );
-    //     if (!response.ok) {
-    //       throw new Error("Failed to fetch lecturers.");
-    //     }
-    //     const data = await response.json();
-    //     setLecturers(data);
-    //   } catch (error) {
-    //     console.error("Error fetching data", error);
-    //   }
-    // };
-
-    //axios to get data from web
+    //axios to get lecturer's data from web
     const fetchLecturers = () => {
       axios
-        .get(
-          "https://my-json-server.typicode.com/JustinHu8/courseCardMock/lecturers"
-        )
+        .get(url)
         .then((response) => {
           setLecturers(response.data);
+          setFilteredLectures(response.data);
         })
         .catch((error) => {
           console.error("Error fetching data", error);
@@ -58,9 +30,40 @@ function App() {
     fetchLecturers();
   }, []);
 
+  //search by courses and lecturers' title
+  const handleSearch = () => {
+    if (searchValue.trim() === "") {
+      setFilteredCourses(courses);
+      setFilteredLectures(lecturers);
+    } else {
+      const filteredCourses = coursesData.filter((course) =>
+        course.title.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setFilteredCourses(filteredCourses);
+      const filteredLectures = lecturers.filter((lecturer) =>
+        lecturer.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setFilteredLectures(filteredLectures);
+    }
+  };
+
+  const handleSearchValueChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <div className="App">
-      {coursesData.map((course) => (
+      <label>
+        Search:
+        <input
+          type="text"
+          placeholder="Please input keywords..."
+          value={searchValue}
+          onChange={handleSearchValueChange}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </label>
+      {filteredCourses.map((course) => (
         <CourseCard
           key={course.id}
           title={course.title}
@@ -72,9 +75,9 @@ function App() {
           cardTopColor={course.cardTopColor}
         />
       ))}
-      {lecturers.map((lecturer) => (
+      {filteredLectures.map((lecturer) => (
         <LecturerCard
-          id={lecturer.id}
+          key={lecturer.id}
           name={lecturer.name}
           title={lecturer.title}
           biography={lecturer.biography}
