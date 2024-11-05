@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign up form in WeChat style</title>
+  </head>
+  <body>
+    <main>
+      <form class="form" action="#" onsubmit="">
+        <h1 class="form-title">Sign Up</h1>
+        <fieldset class="form-fieldset">
+          <legend class="form-fieldset-title">Your basic information</legend>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="first-name"
+              >First Name:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="first-name"
+              type="text"
+              placeholder="first name"
+              required
+            />
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="last-name"
+              >Last Name:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="last-name"
+              type="text"
+              placeholder="last name"
+              required
+            />
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="email"
+              >Email:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="email"
+              type="email"
+              placeholder="email"
+              required
+            />
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="password"
+              >Password:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="password"
+              type="password"
+              placeholder="password"
+              minlength="6"
+              required
+            />
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="con-password"
+              >Confirmed Password:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="con-password"
+              type="password"
+              placeholder="confirm your password"
+              minlength="6"
+              required
+            />
+          </div>
+        </fieldset>
+        <fieldset class="form-fieldset">
+          <legend class="form-fieldset-title">Other details</legend>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="birth-date"
+              >Birth Date:</label
+            >
+            <input
+              class="form-fieldset-section-input"
+              id="birth-date"
+              type="date"
+            />
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="gender-male"
+              >Gender:</label
+            >
+            <div class="form-fieldset-section-selects">
+              <div class="form-fieldset-section-selects-group">
+                <input
+                  id="gender-male"
+                  type="radio"
+                  name="gender"
+                  value="male"
+                />
+                <label for="gender-male">Male</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input
+                  id="gender-female"
+                  type="radio"
+                  name="gender"
+                  value="female"
+                />
+                <label for="gender-female">Female</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input
+                  id="gender-other"
+                  type="radio"
+                  name="gender"
+                  value="other"
+                />
+                <label for="gender-other">Other</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="profession"
+              >Choose Your Profession:</label
+            >
+            <select class="form-fieldset-section-input">
+              <option id="profession" value="country">
+                --Choose Your Profession--
+              </option>
+              <option id="profession-web" value="web-development">
+                Web Development
+              </option>
+              <option id="profession-da" value="data-analytics">
+                Data Analytics
+              </option>
+              <option id="profession-design" value="ui-design">
+                UI/UX Design
+              </option>
+              <option id="profession-devops" value="devops">Devops</option>
+            </select>
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="skill-html"
+              >Basic IT Skill:</label
+            >
+            <div class="form-fieldset-section-selects">
+              <div class="form-fieldset-section-selects-group">
+                <input id="skill-html" type="checkbox" value="html" />
+                <label for="skill-html">HTML</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input id="skill-css" type="checkbox" value="css" />
+                <label for="skill-css">CSS</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input id="skill-js" type="checkbox" value="js" />
+                <label for="skill-js">JS</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input id="skill-react" type="checkbox" value="react" />
+                <label for="skill-react">React</label>
+              </div>
+              <div class="form-fieldset-section-selects-group">
+                <input id="skill-node" type="checkbox" value="node" />
+                <label for="skill-node">Node</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-fieldset-section">
+            <label class="form-fieldset-section-label" for="introducing"
+              >Introduce Yourself:</label
+            >
+            <textarea
+              class="form-fieldset-section-introduction"
+              id="introducing"
+              placeholder="Some introduction..."
+              maxlength="140"
+            ></textarea>
+          </div>
+        </fieldset>
+        <div>
+          <div>
+            <input id="confirm" type="checkbox" value="confirm" />
+            <label for="confirm"
+              >I'm accepting <a href="#">Terms and Conditions</a></label
+            >
+          </div>
+          <div>
+            <input
+              class="form-submit"
+              id="submit"
+              type="submit"
+              value="Sign Up"
+            />
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
