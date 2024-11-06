@@ -19,18 +19,28 @@
   --portrait-border-radius: 50px;
 
   /* margin */
-  --card-margin: 3rem;
+  --card-margin: 1.5rem;
   --card-interior-margin: 0.5em;
 
   /* padding */
   --card-padding: 3em;
 
   /* color */
+  --background-color: azure;
   --text-color: azure;
+  --gray-text-color: grey;
+  --orange-start-color: orange;
+  --black-title-color: black;
   --gradient-color-blue: rgba(28, 115, 235, 0.951);
   --gradient-color-pink: rgba(227, 17, 206, 0.83);
+  --gradient-color-green: rgba(0, 128, 0, 0.8);
 
+  /* background */
+  --introduction-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink)), url(office.png);
+  --introduction-background-b: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-green)), url(office.png);
+  --description-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink));
   /* border */
+  --card-border: 1px solid var(--gray-text-color);
   --button-border: 1px solid var(--text-color);
 }
 
@@ -43,14 +53,18 @@
   color: var(--text-color);
 }
 
-body {
+html {
+  background-color: var(--background-color);
+}
+
+section {
   display: flex;
   align-items: center;
 }
 
 p {
   line-height: var(--line-height);
-  font-weight: lighter;
+  font-weight: 100;
 }
 
 .card {
@@ -59,14 +73,12 @@ p {
   border-radius: var(--card-border-radius);
   margin: var(--card-margin) auto;
   padding: var(--card-padding);
-  background-image: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink)), url(office.png);
-  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* card1 */
+/* introduction card */
 .card-content-title {
   font-size: var(--title-size);
   margin-bottom: var(--card-interior-margin);
@@ -81,7 +93,17 @@ p {
   border-radius: var(--button-border-radius);
 }
 
-/* card2 */
+.card-introduction-a {
+  background: var(--introduction-background-a);
+  background-size: cover;
+}
+
+.card-introduction-b {
+  background: var(--introduction-background-b);
+  background-size: cover;
+}
+
+/* description card */
 .card-head {
   display: flex;
   justify-content: space-between;
@@ -101,4 +123,35 @@ p {
   border-radius: var(--portrait-border-radius);
   margin-right: var(--card-interior-margin);
   margin-bottom: var(--card-interior-margin);
+}
+
+.card-description-a {
+  background: var(--description-background-a);
+}
+
+/* .card-description-b */
+.card-description-b card-topic-text {
+  color: var(--gray-text-color);
+}
+
+.card-description-b {
+  border: var(--card-border);
+  background-color: #fff;
+}
+
+.card.card-description-b .card-topic-text-name {
+  color: var(--black-title-color);
+}
+
+.card.card-description-b .card-content-paragraph,
+.card.card-description-b .card-topic-text-job {
+  color: var(--gray-text-color);
+}
+
+.card.card-description-b .card-topic-text-job strong {
+  color: inherit;
+}
+
+.card.card-description-b .material-symbols-outlined {
+  color: var(--orange-start-color);
 }
