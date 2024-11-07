@@ -39,11 +39,13 @@
   --introduction-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink)), url(office.png);
   --introduction-background-b: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-green)), url(office.png);
   --description-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink));
+
   /* border */
   --card-border: 1px solid var(--gray-text-color);
   --button-border: 1px solid var(--text-color);
 }
 
+/* Base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -78,7 +80,6 @@ p {
   align-items: center;
 }
 
-/* introduction card */
 .card-content-title {
   font-size: var(--title-size);
   margin-bottom: var(--card-interior-margin);
@@ -103,7 +104,6 @@ p {
   background-size: cover;
 }
 
-/* description card */
 .card-head {
   display: flex;
   justify-content: space-between;
@@ -129,11 +129,6 @@ p {
   background: var(--description-background-a);
 }
 
-/* .card-description-b */
-.card-description-b card-topic-text {
-  color: var(--gray-text-color);
-}
-
 .card-description-b {
   border: var(--card-border);
   background-color: #fff;
@@ -154,4 +149,61 @@ p {
 
 .card.card-description-b .material-symbols-outlined {
   color: var(--orange-start-color);
+}
+
+/* Responsive Styles */
+
+/* Large devices (desktops, 1200px and above) */
+@media (min-width: 1200px) {
+  :root {
+    --font-size: 16px;
+    --card-width: 35rem;
+    --card-height: 22rem;
+  }
+}
+
+/* Medium devices (tablets, 768px - 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  :root {
+    --font-size: 14px;
+    --card-width: 28rem;
+    --card-height: 18rem;
+    --card-margin: 1rem;
+    --title-size: 1.8em;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .card-content-button {
+    width: 8em;
+    height: 2.5em;
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.3em;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  :root {
+    --font-size: 12px;
+    --card-width: 100%;
+    --card-height: auto;
+    --title-size: 1.6em;
+    --card-padding: 2em;
+    --button-width: 8em;
+    --button-height: 2.5em;
+    --portrait-size: 2em;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .card-head {
+    margin-bottom: 1em;
+  }
 }
