@@ -43,6 +43,7 @@
   /* border */
   --card-border: 1px solid var(--gray-text-color);
   --button-border: 1px solid var(--text-color);
+  --portrait-border: 2px solid #fff;
 }
 
 /* Base styles */
@@ -120,6 +121,7 @@ p {
   display: inline-block;
   width: var(--portrait-size);
   height: var(--portrait-size);
+  border: var(--portrait-border);
   border-radius: var(--portrait-border-radius);
   margin-right: var(--card-interior-margin);
   margin-bottom: var(--card-interior-margin);
