@@ -1,3 +1,27 @@
+:root {
+  /* font */
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-size: 20px;
+  --field-title-size: 1.7rem;
+  --choice-size: 1rem;
+  /* padding */
+  --main-padding: 3rem;
+  /* margin */
+  --main-margin: 30%;
+  --title-margin: 2rem;
+  --fieldset-margin: 5rem;
+  --fieldset-section-margin: 1.5rem;
+  --label-margin: 0.5rem;
+  /* size */
+  --input-height: 2.5rem;
+  /* radius */
+  --radius: 3px;
+  /* color */
+  --background-color: #F7F7F7;
+  --input-color: #e4e8e3;
+  --green-color: #07C160;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,30 +29,30 @@
 }
 
 body {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
 }
 
 main {
   display: inline-block;
-  background-color: #F7F7F7;
+  background-color: var(--background-color);
   height: 100%;
-  padding: 3rem;
-  margin-left: 30%;
+  padding: var(--main-padding);
+  margin-left: var(--main-margin);
 }
 
 .form-title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--title-margin);
 }
 
 .form-fieldset {
-  margin-bottom: 5rem;
+  margin-bottom: var(--fieldset-margin);
   border: none;
 }
 
 .form-fieldset-title {
-  font-size: 1.7rem;
+  font-size: var(--field-title-size);
 }
 
 .form-fieldset-title::before {
@@ -38,24 +62,24 @@ main {
   height: 1rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  background-color: #07C160;
+  background-color: var(--green-color);
 }
 
 .form-fieldset-section {
-  margin-top: 1.5rem;
+  margin-top: var(--fieldset-section-margin)
 }
 
 .form-fieldset-section-label {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--label-margin);
 }
 
 .form-fieldset-section-input {
   display: block;
   width: 100%;
-  height: 2.5rem;
+  height: var(--input-height);
   border: none;
-  background-color: #e4e8e3;
-  border-radius: 3px;
+  background-color: var(--input-color);
+  border-radius: var(--radius);
 }
 
 .form-fieldset-section-selects {
@@ -64,26 +88,26 @@ main {
 }
 
 .form-fieldset-section-selects-group label {
-  font-size: 1rem;
+  font-size: var(--choice-size);
 }
 
 .form-fieldset-section-introduction {
   display: block;
   resize: none;
   width: 100%;
-  height: 10rem;
+  height: calc(var(--input-height)*3);
   border: none;
-  border-radius: 3px;
-  background-color: #e4e8e3;
+  border-radius: var(--radius);
+  background-color: var(--input-color);
 }
 
 .form-submit {
-  background-color: #07C160;
-  color: white;
+  background-color: var(--green-color);
+  color: var(--background-color);
   display: block;
   width: 100%;
-  height: 2.5rem;
+  height: var(--input-height);
   border: none;
-  border-radius: 3px;
-  margin-top: 1rem;
+  border-radius: var(--radius);
+  margin-top: var(--label-margin);
 }
