@@ -1,4 +1,7 @@
 :root {
+  /* font-family */
+  --font-family: Arial, Helvetica, sans-serif;
+
   /* font-size */
   --font-size: 15px;
   --title-size: 2em;
@@ -51,7 +54,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
   font-size: var(--font-size);
   color: var(--text-color);
 }
@@ -81,12 +84,12 @@ p {
   align-items: center;
 }
 
-.card-content-title {
+.card-title {
   font-size: var(--title-size);
   margin-bottom: var(--card-interior-margin);
 }
 
-.card-content-button {
+.card-button {
   margin-top: calc(var(--card-interior-margin)*2);
   width: var(--button-width);
   height: var(--button-height);
@@ -95,12 +98,12 @@ p {
   border-radius: var(--button-border-radius);
 }
 
-.card-introduction-a {
+.introduction-a {
   background: var(--introduction-background-a);
   background-size: cover;
 }
 
-.card-introduction-b {
+.introduction-b {
   background: var(--introduction-background-b);
   background-size: cover;
 }
@@ -112,12 +115,12 @@ p {
   margin-bottom: var(--card-interior-margin);
 }
 
-.card-head-topic {
+.card-topic {
   display: flex;
   align-items: center;
 }
 
-.card-head-topic-portrait {
+.card-portrait {
   display: inline-block;
   width: var(--portrait-size);
   height: var(--portrait-size);
@@ -127,25 +130,25 @@ p {
   margin-bottom: var(--card-interior-margin);
 }
 
-.card-description-a {
+.description-a {
   background: var(--description-background-a);
 }
 
 .card-description-b {
   border: var(--card-border);
-  background-color: #fff;
+  background-color: var(--text-color);
 }
 
-.card.card-description-b .card-topic-text-name {
+.card.card-description-b .card-introduction-name {
   color: var(--black-title-color);
 }
 
-.card.card-description-b .card-content-paragraph,
-.card.card-description-b .card-topic-text-job {
+.card.card-description-b .card-paragraph,
+.card.card-description-b .card-introduction-job {
   color: var(--gray-text-color);
 }
 
-.card.card-description-b .card-topic-text-job strong {
+.card.card-description-b .card-introduction-job strong {
   color: inherit;
 }
 
@@ -178,7 +181,7 @@ p {
     flex-direction: column;
   }
 
-  .card-content-button {
+  .card-button {
     width: 8em;
     height: 2.5em;
   }
