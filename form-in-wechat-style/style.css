@@ -1,3 +1,6 @@
+/* 单位跟着公司标准和要求 */
+/* 混着用好不好要看情况 */
+
 :root {
   /* font */
   --font-family: Arial, Helvetica, sans-serif;
@@ -65,15 +68,15 @@ main {
   background-color: var(--green-color);
 }
 
-.form-fieldset-section {
+.form-group {
   margin-top: var(--fieldset-section-margin)
 }
 
-.form-fieldset-section-label {
+.form-label {
   margin-bottom: var(--label-margin);
 }
 
-.form-fieldset-section-input {
+.form-input {
   display: block;
   width: 100%;
   height: var(--input-height);
@@ -82,16 +85,16 @@ main {
   border-radius: var(--radius);
 }
 
-.form-fieldset-section-selects {
+.form-selects-group {
   display: flex;
   flex-direction: column;
 }
 
-.form-fieldset-section-selects-group label {
+.form-selects label {
   font-size: var(--choice-size);
 }
 
-.form-fieldset-section-introduction {
+.form-textarea {
   display: block;
   resize: none;
   width: 100%;
