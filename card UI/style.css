@@ -96,6 +96,12 @@ p {
   background-color: transparent;
   border: var(--button-border);
   border-radius: var(--button-border-radius);
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background-color: #fff;
+  color: var(--gradient-color-pink);
 }
 
 .introduction-a {
@@ -136,7 +142,7 @@ p {
 
 .card-description-b {
   border: var(--card-border);
-  background-color: var(--text-color);
+  background-color: white;
 }
 
 .card.card-description-b .card-introduction-name {
