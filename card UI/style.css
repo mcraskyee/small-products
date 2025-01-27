@@ -39,9 +39,9 @@
   --gradient-color-green: rgba(0, 128, 0, 0.8);
 
   /* background */
-  --introduction-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink)), url(office.png);
-  --introduction-background-b: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-green)), url(office.png);
-  --description-background-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink));
+  --introduction-greenackground-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink)), url(office.png);
+  --introduction-greenackground-b: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-green)), url(office.png);
+  --description-emptyackground-a: linear-gradient(to right, var(--gradient-color-blue), var(--gradient-color-pink));
 
   /* border */
   --card-border: 1px solid var(--gray-text-color);
@@ -104,13 +104,13 @@ p {
   color: var(--gradient-color-pink);
 }
 
-.introduction-a {
-  background: var(--introduction-background-a);
+.introduction-pink {
+  background: var(--introduction-greenackground-a);
   background-size: cover;
 }
 
-.introduction-b {
-  background: var(--introduction-background-b);
+.introduction-green {
+  background: var(--introduction-greenackground-b);
   background-size: cover;
 }
 
@@ -136,29 +136,31 @@ p {
   margin-bottom: var(--card-interior-margin);
 }
 
-.description-a {
-  background: var(--description-background-a);
+
+/* special effects of different cards */
+.description-pink {
+  background: var(--description-emptyackground-a);
 }
 
-.card-description-b {
+.card-description-empty {
   border: var(--card-border);
   background-color: white;
 }
 
-.card.card-description-b .card-introduction-name {
+.card.card-description-empty .card-introduction-name {
   color: var(--black-title-color);
 }
 
-.card.card-description-b .card-paragraph,
-.card.card-description-b .card-introduction-job {
+.card.card-description-empty .card-paragraph,
+.card.card-description-empty .card-introduction-job {
   color: var(--gray-text-color);
 }
 
-.card.card-description-b .card-introduction-job strong {
+.card.card-description-empty .card-introduction-job strong {
   color: inherit;
 }
 
-.card.card-description-b .material-symbols-outlined {
+.card.card-description-empty .material-symbols-outlined {
   color: var(--orange-start-color);
 }
 
